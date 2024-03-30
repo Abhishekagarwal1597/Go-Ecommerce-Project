@@ -42,7 +42,7 @@ response will be like this
   "first_name": "abhishek",
   "last_name": "agarwal",
   "password": "$2a$14$UIYjkTfnFnhg4qhIfhtYnuK9qsBQifPKgu/WPZAYBaaN17j0eTQZa",
-  "email": "akhil@gmail.com",
+  "email": "abhishekagarwal15297@gmail.com",
   "phone": "+4534545435",
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFiaGlzaGVrYWdhcndhbEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiQWJoaXNoZWsiLCJMYXN0X05hbWUiOiJBZ2Fyd2FsIiwiVWlkIjoiNjYwN2FlMjllZDc2N2ZmMTNjNzVhMzFmIiwiZXhwIjoxNzExODcyMDc1fQ.3gKMq54JiwXHTz885OrJjXhcxfkWwpI3Bmco8Vx4cjY",
   "Refresh_Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6IiIsIkZpcnN0X05hbWUiOiIiLCJMYXN0X05hbWUiOiIiLCJVaWQiOiIiLCJleHAiOjE3MTIzOTA0NzV9.eYRr0XR4NNrCfBC0MDlhaFFXntVUBVYGT9e5v_q4yEM",
