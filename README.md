@@ -13,7 +13,7 @@ http://localhost:8000/users/signup
 
 ```json
 {
-  "first_name": "Abhishek
+  "first_name": "Abhishek",
   "last_name": "Agarwal",
   "email": "abhishekagarwal15297@gmail.com",
   "password": "abhishekagarwal",
