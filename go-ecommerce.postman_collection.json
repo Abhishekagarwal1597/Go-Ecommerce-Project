@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "4587753f-e4d1-4d17-b8f0-d0526a01c9a0",
+		"name": "go-ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33060210"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"Abhishek\",\r\n  \"last_name\": \"Agarwal\",\r\n  \"email\": \"abhishekagarwal@gmail.com\",\r\n  \"password\": \"abhishekAgarwal\",\r\n  \"phone\": \"+4213414143\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"abhishekagarwal@gmail.com\",\r\n  \"password\": \"abhishekAgarwal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_name\": \"Boast x15\",\r\n  \"price\": 2500,\r\n  \"rating\": 10,\r\n  \"image\": \"boast.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/admin/addproduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"addproduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ViewProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/productview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"productview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchPoduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/search?name=Bo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Bo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProductToUserCart",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "payload",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFiaGlzaGVrYWdhcndhbEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiQWJoaXNoZWsiLCJMYXN0X05hbWUiOiJBZ2Fyd2FsIiwiVWlkIjoiNjYwN2FlMjllZDc2N2ZmMTNjNzVhMzFmIiwiZXhwIjoxNzExODY1OTI1fQ.weTT57Yijc-3zHOoJgCjoXHKuH9rSkJnhPVgMNEbq8E",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFiaGlzaGVrYWdhcndhbEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiQWJoaXNoZWsiLCJMYXN0X05hbWUiOiJBZ2Fyd2FsIiwiVWlkIjoiNjYwN2FlMjllZDc2N2ZmMTNjNzVhMzFmIiwiZXhwIjoxNzExODcyMDc1fQ.3gKMq54JiwXHTz885OrJjXhcxfkWwpI3Bmco8Vx4cjY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/addtocart?id=6607afdfed767ff13c75a320&userID=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"addtocart"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607afdfed767ff13c75a320"
+						},
+						{
+							"key": "userID",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListItemsinCart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFiaGlzaGVrYWdhcndhbEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiQWJoaXNoZWsiLCJMYXN0X05hbWUiOiJBZ2Fyd2FsIiwiVWlkIjoiNjYwN2FlMjllZDc2N2ZmMTNjNzVhMzFmIiwiZXhwIjoxNzExODcyMDc1fQ.3gKMq54JiwXHTz885OrJjXhcxfkWwpI3Bmco8Vx4cjY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/listcart?id=6607ae29ed767ff13c75a31f&userID=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"listcart"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607ae29ed767ff13c75a31f"
+						},
+						{
+							"key": "userID",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CartCheckout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/cartcheckout?id=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cartcheckout"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstantBuy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/instantbuy?userid=6607ae29ed767ff13c75a31f&pid=6607eae7ed767ff13c75a326",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"instantbuy"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "6607ae29ed767ff13c75a31f"
+						},
+						{
+							"key": "pid",
+							"value": "6607eae7ed767ff13c75a326"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"house_name\": \"Modi house\",\r\n  \"street_name\": \"Birls street\",\r\n  \"city_name\": \"las wegas\",\r\n  \"pin_code\": \"332423432\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/addaddress?id=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"addaddress"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editHomeAddress",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"house_name\": \"work house\",\r\n  \"street_name\": \"wok street\",\r\n  \"city_name\": \"Gurgram\",\r\n  \"pin_code\": \"332423432\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/edithomeaddress?id=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"edithomeaddress"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editWorkAddress",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"house_name\": \"Work Address2\",\r\n  \"street_name\": \"work street\",\r\n  \"city_name\": \"washington\",\r\n  \"pin_code\": \"332423432\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/editworkaddress?id=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"editworkaddress"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAddress",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/deleteaddresses?id=6607ae29ed767ff13c75a31f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"deleteaddresses"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6607ae29ed767ff13c75a31f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeItemFromCart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
